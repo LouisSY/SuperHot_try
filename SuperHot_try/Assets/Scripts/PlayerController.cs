@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         var coeff = rotateSpeed * Sensitivity * Time.deltaTime;
 
         // 左右偏移量
-        this.transform.Rotate(Vector3.up * x_offset * coeff);
+        this.gameObject.transform.Rotate(Vector3.up * x_offset * coeff);
 
         // 上下偏移量
         x_rotation -= y_offset * coeff;                                     // vec3.x 
@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
         Vector3 offset_rotate = new Vector3(x_rotation, 0, 0);
         Quaternion q = Quaternion.Euler(offset_rotate);
         playerCamera_trans.localRotation = q;
-
 
     }
 
