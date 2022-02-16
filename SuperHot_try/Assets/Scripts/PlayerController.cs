@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         if(playerCamera_trans == null) return; //防止屏幕疯狂闪烁
 
+
         // 虚拟轴
         float x_offset = Input.GetAxis("Mouse X"); // 左右移动
         float y_offset = Input.GetAxis("Mouse Y"); // 上下移动
