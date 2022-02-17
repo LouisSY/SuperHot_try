@@ -12,6 +12,7 @@ public class TPS_PlayerControl : MonoBehaviour
 
     [SerializeField]
     private Transform _followingTarget;
+    public GameObject robot;
     private void Awake()
     {
         _tps_characterMovment = GetComponent<TPS_CharacterMovement>();
@@ -36,6 +37,6 @@ public class TPS_PlayerControl : MonoBehaviour
     private void rotateWithCamera()
     {
          Quaternion rotation = Quaternion.Euler(0, _tps_cameraController.rotate_along_y, 0);      //沿y轴旋转的方向为正方向
-         this.transform.rotation = rotation;
+         robot.transform.rotation = rotation;
     }
 }
