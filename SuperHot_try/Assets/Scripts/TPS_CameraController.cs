@@ -24,6 +24,7 @@ public class TPS_CameraController : MonoBehaviour
     void Update()
     {
         rotationControll();
+        positionControl();
     }
 
     private void rotationControll()
@@ -42,7 +43,7 @@ public class TPS_CameraController : MonoBehaviour
         transform.position = target.position;
     }
 
-    private void positionCOntrol()
+    private void positionControl()
     {
         //水平方向跟随 竖直方向有差值
         float pos_y = Mathf.Lerp(transform.position.y, _target.position.y, Time.deltaTime * speed_Y);
