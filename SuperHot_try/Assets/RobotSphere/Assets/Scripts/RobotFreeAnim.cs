@@ -7,6 +7,7 @@ public class RobotFreeAnim : MonoBehaviour {
 	Vector3 rot = Vector3.zero;
 	float rotSpeed = 40f;
 	Animator anim;
+	public bool end = false;
 
 	// Use this for initialization
 	void Awake()
@@ -25,13 +26,22 @@ public class RobotFreeAnim : MonoBehaviour {
 	void CheckKey()
 	{
 		// Walk
-		if (Input.GetKey(KeyCode.W))
+		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
 		{
 			anim.SetBool("Walk_Anim", true);
 		}
-		else if (Input.GetKeyUp(KeyCode.W))
+		else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
 		{
 			anim.SetBool("Walk_Anim", false);
+		}
+		//back
+		if (Input.GetKey(KeyCode.S))
+		{
+			anim.SetBool("reverse_Anim", true);
+		}
+		else if (Input.GetKeyUp(KeyCode.S))
+		{
+			anim.SetBool("reverse_Anim", false);
 		}
 
 		// Rotate Left

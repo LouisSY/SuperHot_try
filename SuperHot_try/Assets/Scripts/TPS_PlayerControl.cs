@@ -12,6 +12,8 @@ public class TPS_PlayerControl : MonoBehaviour
 
     [SerializeField]
     private Transform _followingTarget;
+
+    private bool end = false;
     public GameObject robot;
     private void Awake()
     {
@@ -22,8 +24,14 @@ public class TPS_PlayerControl : MonoBehaviour
 
     void Update()
     {
-        UpdateMovement();
         rotateWithCamera();
+        if (!end) { 
+            end = GetComponentInChildren<RobotFreeAnim>().end;
+            if (!end) {
+                return;
+            }     
+        }
+        UpdateMovement();
     }
 
     private void UpdateMovement()
