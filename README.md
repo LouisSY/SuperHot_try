@@ -3,4 +3,4 @@ Unity teamwork
 
 FPS Games
 
-Unity Editor version: 2020.3.28f1 (LTS)
+Unity Editor version: 2021.3.1f1 (LTS)
